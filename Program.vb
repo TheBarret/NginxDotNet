@@ -9,7 +9,7 @@ Module Program
         'Define our variable container
         Dim vars As New Dictionary(Of String, String)
 
-        ' Pass one arguments and layout header
+        ' Pass arguments and layout header
         Header(args, vars)
 
         Try
