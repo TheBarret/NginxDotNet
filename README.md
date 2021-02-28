@@ -5,4 +5,4 @@ PoC Nginx that runs compiled DotNet applications
 - Nginx
 - fcgi-wrapper
 - Mono
-- libmono-microsoft-visualbasic10.0-cil
+- libmono-microsoft-visualbasic10.0-cil (sometimes does not get installed with the mono-full package)
