@@ -1,6 +1,8 @@
 # NginxDotNet
 PoC Nginx that runs compiled DotNet applications
 
+![](https://i.imgur.com/r70m7ep.png)
+
 *This setup requires you the following installed:*
 - Nginx
 - fcgi-wrapper
