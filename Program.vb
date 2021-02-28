@@ -27,7 +27,6 @@ Module Program
 
         Catch ex As Exception
             Session.Write(String.Format("Error: {0}", ex.Message))
-            Console.Read()
         Finally
             Footer()
         End Try
