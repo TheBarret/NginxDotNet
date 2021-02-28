@@ -1,4 +1,6 @@
 ﻿Imports System.Collections.Specialized
+Imports System.Drawing
+Imports System.IO
 Imports System.Web
 Imports nginx.net.Session
 
@@ -9,11 +11,19 @@ Module Program
         'Define our variable container
         Dim vars As New Dictionary(Of String, String)
 
-        ' Pass arguments and layout header
+        'Pass arguments and layout header
         Header(args, vars)
 
         Try
             Session.Write("<h1>Hello, World!</h1>")
+
+            ' Create a little bit of art
+            If (File.Exists("logo.png")) Then
+                Session.Write("<font face='Consolas'><pre>")
+                Session.Write(Ascii.Convert(Ascii.Resize(New Bitmap("logo.png"), 4, 4), " .,:;'?+=!#$%^&*0123456789abcdefghijklmnopqrstuvwxyz".ToCharArray))
+                Session.Write("</pre></font>")
+            End If
+
             If (vars.Any) Then
                 For Each pair As KeyValuePair(Of String, String) In vars
                     Session.Write(String.Format("Variable: {0} Value: <strong>{1}</strong><br>", pair.Key, pair.Value))
